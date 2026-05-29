@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/png" href="favicon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Culture & Careers | SVM - Silicon Valley Mechanical</title>
+<meta name="description" content="Join Silicon Valley Mechanical. Explore our culture, core values, and career opportunities in HVAC and plumbing across Northern California and Nevada.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--svm-blue:#1a5276;--svm-blue-light:#2471a3;--svm-dark:#0d2b3e;--charcoal:#1C1C1C;--muted:#4B5563;--gray-100:#F3F4F6;--gray-200:#E5E7EB;--gray-600:#4B5563;--white:#ffffff;--bg:#fafafa;--heading:'Montserrat',sans-serif;--body:'DM Sans',sans-serif;--ease:cubic-bezier(0.33,1,0.68,1)}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+body{font-family:var(--body);font-size:1rem;line-height:1.6;color:var(--charcoal);background:var(--bg);overflow-x:hidden}
+.container{width:90%;max-width:1200px;margin:0 auto}
+@media(min-width:1024px){.container{width:85%}}
+h1,h2,h3,h4{font-family:var(--heading);font-weight:700;line-height:1.2;color:var(--charcoal)}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;height:auto}
+.btn{display:inline-flex;align-items:center;gap:.4rem;padding:.55rem 1.3rem;border-radius:5px;font-family:var(--body);font-size:.82rem;font-weight:600;text-decoration:none;transition:all .2s;border:none;cursor:pointer}
+.btn-primary{background:var(--svm-blue);color:var(--white)}
+.btn-primary:hover{background:var(--svm-blue-light)}
+.btn-outline{background:transparent;color:var(--charcoal);border:1.5px solid #D1D5DB}
+.btn-outline:hover{border-color:var(--charcoal)}
+
+.topbar{background:var(--svm-dark);color:rgba(255,255,255,.85);font-size:.78rem;padding:.5rem 0;text-align:right;letter-spacing:.02em}
+.topbar a{color:var(--white);text-decoration:none;font-weight:600}
+
+.header{position:sticky;top:0;z-index:200;background:rgba(255,255,255,.98);backdrop-filter:blur(10px);border-bottom:1px solid rgba(0,0,0,.06);padding:.7rem 0}
+.header-inner{display:flex;align-items:center;justify-content:space-between}
+.header-logo{display:flex;align-items:center;gap:.65rem;text-decoration:none}
+.header-logo img{height:40px}
+.header-logo-text{font-family:var(--heading);font-size:.6rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#5d6d7e;line-height:1.4}
+.header-nav{display:flex;align-items:center;gap:2rem}
+.header-nav a{font-size:.82rem;font-weight:500;color:var(--charcoal);opacity:.6;transition:opacity .2s}
+.header-nav a:hover,.header-nav a.active{opacity:1}
+.header-actions{display:flex;gap:.5rem;align-items:center}
+.mobile-toggle{display:none;background:none;border:none;cursor:pointer;padding:8px}
+.mobile-toggle span{display:block;width:22px;height:2px;background:var(--charcoal);margin:5px 0;transition:all .3s}
+
+.page-hero{position:relative;padding:5rem 0 4rem;background:var(--white);border-bottom:1px solid var(--gray-200)}
+.page-hero h1{font-size:clamp(2rem,4vw,3rem);margin-bottom:.75rem}
+.page-hero p{color:var(--gray-600);font-size:1.2rem;max-width:600px;line-height:1.7;font-weight:500}
+
+.section{padding:4rem 0}
+.section.alt{background:var(--white)}
+.section-label{font-family:var(--heading);font-size:.7rem;text-transform:uppercase;letter-spacing:.12em;color:var(--svm-blue);font-weight:700;margin-bottom:.75rem}
+
+.values-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin-top:2rem}
+.value-card{padding:2rem;border:1px solid var(--gray-200);border-radius:8px;background:var(--bg)}
+.value-card h3{font-size:1.05rem;margin-bottom:.4rem}
+.value-card p{color:var(--gray-600);font-size:.92rem;line-height:1.7}
+
+.culture-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;margin-top:2rem}
+.culture-grid img{width:100%;border-radius:8px}
+.culture-text h2{font-size:clamp(1.6rem,2.5vw,2rem);margin-bottom:1rem}
+.culture-text p{color:var(--gray-600);line-height:1.8;margin-bottom:1rem}
+
+.perks-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2rem}
+.perk-card{padding:1.5rem;border:1px solid var(--gray-200);border-radius:8px;background:var(--white)}
+.perk-card h4{font-size:.92rem;margin-bottom:.3rem}
+.perk-card p{font-size:.82rem;color:var(--muted);line-height:1.5}
+
+.cta-section{padding:4rem 0;background:var(--svm-dark);color:var(--white);text-align:center}
+.cta-section h2{color:var(--white);font-size:clamp(1.6rem,3vw,2.2rem);margin-bottom:.75rem}
+.cta-section p{color:rgba(255,255,255,.6);margin-bottom:1.5rem;font-size:1rem}
+.cta-section .btn-primary{padding:.75rem 2rem;font-size:.9rem}
+
+.footer{background:var(--svm-dark);color:var(--white);padding:3rem 0 1.5rem}
+.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:2.5rem;margin-bottom:2rem}
+.footer h4{font-family:var(--heading);font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.4);margin-bottom:1rem}
+.footer-brand p{font-size:.85rem;color:rgba(255,255,255,.5);line-height:1.6;margin-top:.75rem}
+.footer-brand .phone{font-size:.95rem;font-weight:700;color:var(--white);margin-top:.5rem}
+.footer-brand .phone-sub{font-size:.78rem;color:rgba(255,255,255,.4)}
+.footer-links a{display:block;font-size:.82rem;color:rgba(255,255,255,.5);margin-bottom:.5rem;transition:color .2s}
+.footer-links a:hover{color:var(--white)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.08);padding-top:1.25rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem}
+.footer-license,.footer-copy{font-size:.72rem;color:rgba(255,255,255,.3)}
+
+@media(max-width:768px){
+.header-nav,.header-actions{display:none}
+.mobile-toggle{display:block;z-index:999}
+.header-nav.open{display:flex;position:fixed;inset:0;background:rgba(255,255,255,.98);flex-direction:column;justify-content:center;align-items:center;gap:1.5rem;z-index:998}
+.values-grid,.culture-grid{grid-template-columns:1fr}
+.perks-grid{grid-template-columns:1fr}
+.footer-grid{grid-template-columns:1fr;text-align:center}
+.footer-bottom{flex-direction:column;text-align:center}
+.mobile-toggle.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.mobile-toggle.open span:nth-child(2){opacity:0}
+.mobile-toggle.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+}
+</style>
+</head>
+<body>
+<div class="topbar"><div class="container">24-Hour HVAC &amp; Plumbing Service: <a href="tel:4089430380">408.943.0380</a> Dial 5</div></div>
+
+<header class="header">
+<div class="container header-inner">
+  <a href="index.html" class="header-logo"><img src="images/svm-logo.png" alt="SVM" width="40" height="40"><span class="header-logo-text">Silicon Valley<br>Mechanical</span></a>
+  <nav class="header-nav" id="headerNav">
+    <a href="index.html#about">About</a>
+    <a href="index.html#capabilities">Capabilities</a>
+    <a href="index.html#team">Team</a>
+    <a href="index.html#locations">Locations</a>
+    <a href="culture-careers.html" class="active">Culture &amp; Careers</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  <div class="header-actions">
+    <a href="tel:4089430380" class="btn btn-outline">408.943.0380</a>
+    <a href="contact.html" class="btn btn-primary">Request Quote</a>
+  </div>
+  <button class="mobile-toggle" id="mobileToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+</div>
+</header>
+
+<section class="page-hero">
+<div class="container">
+  <h1>Culture &amp; Careers</h1>
+  <p>SVM invests in its people. We build systems that sustain, including our people.</p>
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+  <div class="section-label">Who We Are</div>
+  <h2 style="margin-bottom:1.5rem">Where great people build great things</h2>
+  <div style="display:grid;grid-template-columns:1.2fr 1fr;gap:2.5rem;align-items:start">
+    <div>
+      <p style="color:var(--gray-600);font-size:1.05rem;line-height:1.8;margin-bottom:1rem">Leadership training, mentorship, on-site fitness, and team sports foster an environment where careers grow alongside the company. At SVM, we believe the best mechanical systems are built by the best people, so we invest in ours.</p>
+      <p style="color:var(--gray-600);font-size:1.05rem;line-height:1.8">Since 2018 we have partnered with Rebuilding Together Silicon Valley and we host annual Stanford Blood Center drives. Our team gives back because this community gave us our start.</p>
+    </div>
+    <img src="images/culture-training.jpg" alt="SVM team training session" style="width:100%;border-radius:8px" loading="lazy">
+  </div>
+</div>
+</section>
+
+<section class="section alt">
+<div class="container">
+  <div class="section-label">Core Values</div>
+  <h2 style="margin-bottom:1.5rem">What drives us</h2>
+  <div class="values-grid">
+    <div class="value-card" style="border-left:4px solid var(--svm-blue);padding-left:1.75rem">
+      <h3>Do the right thing</h3>
+      <p>Integrity in every interaction. We stand behind our work and our word. No shortcuts, no excuses.</p>
+    </div>
+    <div class="value-card" style="border-left:4px solid var(--svm-blue);padding-left:1.75rem">
+      <h3>Be curious</h3>
+      <p>From VRF training for apprentices to new certifications for veterans, we never stop learning. Technology moves fast and so do we.</p>
+    </div>
+    <div class="value-card" style="border-left:4px solid var(--svm-blue);padding-left:1.75rem">
+      <h3>Work collaboratively</h3>
+      <p>Three offices, one standard. Our technicians, PMs, and engineers share knowledge across every project and every region.</p>
+    </div>
+    <div class="value-card" style="border-left:4px solid var(--svm-blue);padding-left:1.75rem">
+      <h3>Live balanced</h3>
+      <p>On-site gyms, team sports leagues, community volunteering. We build systems that sustain, and that includes taking care of our people.</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+  <div class="section-label">Perks &amp; Benefits</div>
+  <h2 style="margin-bottom:1.5rem">Why people stay</h2>
+  <div class="perks-grid">
+    <div class="perk-card" style="border-top:3px solid var(--svm-blue)"><h4>On-Site Gym</h4><p>Bootcamp classes, yoga, and Pilates right at HQ. No commute to the gym after a shift.</p></div>
+    <div class="perk-card" style="border-top:3px solid var(--svm-blue)"><h4>Team Sports</h4><p>Company golf outings, softball teams, basketball leagues, and group bike rides.</p></div>
+    <div class="perk-card" style="border-top:3px solid var(--svm-blue)"><h4>Career Growth</h4><p>Paid training, industry certifications, and a clear path from apprentice to leadership.</p></div>
+    <div class="perk-card" style="border-top:3px solid var(--svm-blue)"><h4>Community Impact</h4><p>Rebuilding Together Silicon Valley partnership and annual Stanford Blood Center drives.</p></div>
+    <div class="perk-card" style="border-top:3px solid var(--svm-blue)"><h4>Union Workforce</h4><p>SMACNA, UA Local 393/467/342, and SMART Local 104 trained and certified.</p></div>
+    <div class="perk-card" style="border-top:3px solid var(--svm-blue)"><h4>Safety Program</h4><p>Dedicated Director of Safety, full safety program, CHST and CSP certified leadership.</p></div>
+  </div>
+</div>
+</section>
+
+<section class="cta-section">
+<div class="container">
+  <h2>Ready to build your career?</h2>
+  <p>We are always looking for talented people to join our team.</p>
+  <a href="mailto:careers@svminc.com" class="btn btn-primary">Email careers@svminc.com</a>
+</div>
+</section>
+
+<footer class="footer">
+<div class="container">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <span style="font-family:var(--heading);font-size:1.6rem;font-weight:800;letter-spacing:.04em;color:var(--white);display:block;margin-bottom:.25rem">SVM</span>
+      <p>Premier HVAC and plumbing contractor serving Northern California and Nevada since 1994.</p>
+      <div class="phone"><a href="tel:4089430380" style="color:white;text-decoration:none">408.943.0380</a></div>
+      <div class="phone-sub">24-Hour HVAC Service: Dial 5</div>
+    </div>
+    <div class="footer-links"><h4>Quick Links</h4><a href="index.html">Home</a><a href="index.html#team">Team</a><a href="index.html#capabilities">Capabilities</a><a href="culture-careers.html">Culture &amp; Careers</a><a href="contact.html">Contact</a></div>
+    <div class="footer-links"><h4>Capabilities</h4><a href="hvac-construction.html">HVAC Construction</a><a href="plumbing-piping.html">Plumbing &amp; Piping</a><a href="service-maintenance.html">Service &amp; Maintenance</a></div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-license">CA License #992731 | NV License #0092538 &amp; #0092508</div>
+    <div class="footer-copy">&copy; 2026 Silicon Valley Mechanical, Inc. All rights reserved.</div>
+  </div>
+</div>
+</footer>
+
+<script>
+const toggle=document.getElementById('mobileToggle'),nav=document.getElementById('headerNav');
+toggle.addEventListener('click',()=>{toggle.classList.toggle('open');nav.classList.toggle('open')});
+nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{toggle.classList.remove('open');nav.classList.remove('open')}));
+</script>
+</body>
+</html>

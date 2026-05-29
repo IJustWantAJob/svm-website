@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/png" href="favicon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SVM | Silicon Valley Mechanical - HVAC & Plumbing Contractor</title>
+<meta name="description" content="Silicon Valley Mechanical (SVM) is the Bay Area's premier HVAC and plumbing contractor. 24/7 emergency service, full design-build capabilities, serving commercial facilities since 1994.">
+<meta name="keywords" content="HVAC contractor San Jose, plumbing contractor Bay Area, mechanical contractor Silicon Valley, commercial HVAC service, 24/7 HVAC emergency">
+<meta property="og:title" content="SVM | Silicon Valley Mechanical">
+<meta property="og:description" content="Building Beyond. Premier HVAC & Plumbing contractor serving the Bay Area, Sacramento, and Reno since 1994.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="images/hero-tech-rooftop.jpg">
+<link rel="canonical" href="https://www.svminc.com">
+<meta name="robots" content="index, follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Silicon Valley Mechanical",
+  "alternateName": "SVM",
+  "url": "https://www.svminc.com",
+  "description": "Premier HVAC and plumbing contractor serving Northern California and Nevada since 1994.",
+  "foundingDate": "1994",
+  "slogan": "Building Beyond.",
+  "telephone": "+1-408-943-0380",
+  "email": "careers@svminc.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "2115 Ringwood Ave",
+    "addressLocality": "San Jose",
+    "addressRegion": "CA",
+    "postalCode": "95131",
+    "addressCountry": "US"
+  }
+}
+</script>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --svm-blue:#1a5276;
+  --svm-blue-light:#2471a3;
+  --svm-gray:#5d6d7e;
+  --svm-dark:#0d2b3e;
+  --charcoal:#1C1C1C;
+  --muted:#4B5563;
+  --gray-100:#F3F4F6;
+  --gray-200:#E5E7EB;
+  --gray-300:#D1D5DB;
+  --gray-600:#4B5563;
+  --white:#ffffff;
+  --bg:#fafafa;
+  --heading:'Montserrat',sans-serif;
+  --body:'DM Sans',sans-serif;
+  --ease:cubic-bezier(0.33,1,0.68,1);
+}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+body{font-family:var(--body);font-size:1rem;line-height:1.6;color:var(--charcoal);background:var(--bg);overflow-x:hidden}
+
+.container{width:90%;max-width:1200px;margin:0 auto}
+@media(min-width:1024px){.container{width:85%}}
+
+h1,h2,h3,h4{font-family:var(--heading);font-weight:700;line-height:1.2;color:var(--charcoal)}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;height:auto}
+
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .35s var(--ease),transform .35s var(--ease)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-d1{transition-delay:.05s}
+.reveal-d2{transition-delay:.1s}
+.reveal-d3{transition-delay:.15s}
+
+/* TOP BAR */
+.topbar{background:var(--svm-dark);color:rgba(255,255,255,.85);font-size:.78rem;padding:.5rem 0;text-align:right;letter-spacing:.02em}
+.topbar a{color:var(--white);text-decoration:none;font-weight:600}
+.topbar a:hover{text-decoration:underline}
+
+/* HEADER */
+.header{position:sticky;top:0;z-index:200;background:rgba(255,255,255,.98);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid rgba(0,0,0,.06);padding:.7rem 0;transition:padding .3s,box-shadow .3s}
+.header.scrolled{padding:.5rem 0;box-shadow:0 2px 8px rgba(0,0,0,.04)}
+.header-inner{display:flex;align-items:center;justify-content:space-between}
+.header-logo{display:flex;align-items:center;gap:.65rem;text-decoration:none}
+.header-logo img{height:40px;width:auto}
+.header-logo-text{font-family:var(--heading);font-size:.6rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--svm-gray);line-height:1.4}
+.header-nav{display:flex;align-items:center;gap:2rem}
+.header-nav a{font-size:.82rem;font-weight:500;color:var(--charcoal);opacity:.6;transition:opacity .2s;letter-spacing:.01em}
+.header-nav a:hover,.header-nav a.active{opacity:1}
+.header-actions{display:flex;gap:.5rem;align-items:center}
+.btn{display:inline-flex;align-items:center;gap:.4rem;padding:.55rem 1.3rem;border-radius:5px;font-family:var(--body);font-size:.82rem;font-weight:600;text-decoration:none;transition:all .2s var(--ease);border:none;cursor:pointer;letter-spacing:.01em}
+.btn-primary{background:var(--svm-blue);color:var(--white)}
+.btn-primary:hover{background:var(--svm-blue-light)}
+.btn-outline{background:transparent;color:var(--charcoal);border:1.5px solid var(--gray-300)}
+.btn-outline:hover{border-color:var(--charcoal)}
+
+.mobile-toggle{display:none;background:none;border:none;cursor:pointer;padding:8px}
+.mobile-toggle span{display:block;width:22px;height:2px;background:var(--charcoal);margin:5px 0;transition:all .3s}
+
+/* HERO */
+.hero{position:relative;min-height:88vh;display:flex;align-items:flex-end;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:
+  linear-gradient(180deg,rgba(13,43,62,.3) 0%,rgba(13,43,62,.55) 50%,rgba(13,43,62,.82) 100%),
+  url('images/hero-tech-rooftop.jpg') center/cover no-repeat}
+.hero .container{position:relative;z-index:2;padding-bottom:5rem;padding-top:8rem}
+.hero-content{max-width:700px}
+.hero h1{font-size:clamp(2.8rem,6vw,5rem);color:var(--white);font-weight:800;line-height:1.05;letter-spacing:-.02em;margin-bottom:1.25rem}
+.hero-sub{font-size:clamp(1rem,1.5vw,1.15rem);color:rgba(255,255,255,.85);line-height:1.7;margin-bottom:2.5rem;font-weight:500;max-width:520px}
+.hero-actions{display:flex;gap:1rem;flex-wrap:wrap}
+.hero .btn-primary{padding:.8rem 2rem;font-size:.9rem;background:var(--svm-blue)}
+.hero .btn-ghost{background:transparent;color:var(--white);border:1.5px solid rgba(255,255,255,.4);padding:.8rem 2rem;font-size:.9rem;border-radius:5px;font-family:var(--body);font-weight:600;display:inline-flex;align-items:center;gap:.4rem;transition:all .2s}
+.hero .btn-ghost:hover{border-color:var(--white);background:rgba(255,255,255,.08)}
+
+/* ABOUT */
+.about{padding:5rem 0}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.section-label{font-family:var(--heading);font-size:.7rem;text-transform:uppercase;letter-spacing:.12em;color:var(--svm-blue);font-weight:700;margin-bottom:.75rem}
+.about h2{font-size:clamp(1.8rem,3vw,2.4rem);margin-bottom:1.25rem}
+.about p{color:var(--gray-600);line-height:1.8;margin-bottom:1rem;font-size:.98rem}
+.about-image{position:relative;border-radius:8px;overflow:hidden;aspect-ratio:4/3;background:var(--gray-200)}
+.about-image img{width:100%;height:100%;object-fit:cover}
+
+/* CAPABILITIES */
+.capabilities{padding:5rem 0;background:var(--white)}
+.capabilities-header{text-align:center;max-width:560px;margin:0 auto 3rem}
+.capabilities-header h2{font-size:clamp(1.8rem,3vw,2.4rem);margin-bottom:.75rem}
+.capabilities-header p{color:var(--muted);font-size:1.05rem;line-height:1.7;margin:0 auto}
+.cap-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+.cap-card{display:block;padding:0;border:1px solid var(--gray-200);border-radius:8px;background:var(--bg);transition:all .25s var(--ease);overflow:hidden;text-decoration:none;color:inherit}
+.cap-card:hover{border-color:var(--svm-blue);transform:translateY(-3px);box-shadow:0 8px 24px rgba(26,82,118,.08)}
+.cap-card-img{width:100%;height:200px;object-fit:cover;display:block}
+.cap-card-body{padding:1.5rem}
+.cap-card h3{font-size:1rem;margin-bottom:.5rem}
+.cap-card p{font-size:.9rem;color:var(--muted);line-height:1.6}
+.cap-card-arrow{display:inline-flex;align-items:center;gap:.4rem;margin-top:1rem;font-size:.9rem;font-weight:700;color:var(--svm-blue);padding:.5rem 1rem;background:rgba(26,82,118,.06);border-radius:5px;transition:background .2s}
+.cap-card:hover .cap-card-arrow{background:rgba(26,82,118,.12)}
+
+/* INDUSTRIES */
+.industries{padding:5rem 0}
+.industries-header{text-align:center;max-width:500px;margin:0 auto 3rem}
+.industries-header h2{font-size:clamp(1.8rem,3vw,2.4rem);margin-bottom:.75rem}
+.industries-header p{color:var(--muted);font-size:1rem;line-height:1.7;margin:0 auto}
+.ind-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+.ind-card{text-align:center;padding:1.75rem 1.25rem;border:1px solid var(--gray-200);border-radius:8px;background:var(--white);transition:all .25s var(--ease)}
+.ind-card:hover{border-color:var(--svm-blue);transform:translateY(-2px)}
+.ind-card h3{font-size:.88rem;font-weight:600}
+
+/* LOCATIONS */
+.locations{padding:5rem 0;background:var(--white)}
+.locations-header{text-align:center;max-width:480px;margin:0 auto 3rem}
+.locations-header h2{font-size:clamp(1.8rem,3vw,2.4rem);margin-bottom:.75rem}
+.locations-header p{color:var(--muted);font-size:1rem;margin:0 auto}
+.loc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+.loc-card{padding:2rem;border:1px solid var(--gray-200);border-radius:8px;background:var(--bg);transition:all .25s var(--ease)}
+.loc-card:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,.04)}
+.loc-card h3{font-family:var(--heading);font-size:1.15rem;font-weight:700;margin-bottom:.15rem}
+.loc-region{font-size:.78rem;color:var(--svm-blue);font-weight:600;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.65rem}
+.loc-card address{font-style:normal;font-size:.88rem;color:var(--gray-600);line-height:1.6;margin-bottom:.75rem}
+.loc-map-link{font-size:.8rem;font-weight:600;color:var(--svm-blue);display:inline-block}
+
+/* TEAM */
+.team{padding:5rem 0}
+.team-header{text-align:center;max-width:500px;margin:0 auto 2rem}
+.team-header h2{font-size:clamp(1.8rem,3vw,2.4rem);margin-bottom:.75rem}
+.team-header p{color:var(--muted);font-size:1rem;line-height:1.7;margin:0 auto}
+.team-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1.25rem}
+.team-card{text-align:center;padding:1.25rem .75rem;border-radius:8px;transition:all .2s var(--ease)}
+.team-card:hover{background:var(--white);box-shadow:0 4px 12px rgba(0,0,0,.04)}
+.team-avatar{width:180px;height:180px;border-radius:50%;margin:0 auto .85rem;overflow:hidden;background:var(--gray-200)}
+.team-avatar img{width:100%;height:100%;object-fit:cover}
+.team-card h3{font-size:.95rem;font-weight:700;margin-bottom:.15rem}
+.team-card span{font-size:.82rem;color:var(--svm-blue);font-weight:500}
+
+/* FOOTER */
+.footer{background:var(--svm-dark);color:var(--white);padding:3rem 0 1.5rem}
+.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:2.5rem;margin-bottom:2rem}
+.footer h4{font-family:var(--heading);font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.4);margin-bottom:1rem}
+.footer-brand p{font-size:.85rem;color:rgba(255,255,255,.5);line-height:1.6;margin-top:.75rem}
+.footer-brand .phone{font-size:.95rem;font-weight:700;color:var(--white);margin-top:.5rem}
+.footer-brand .phone-sub{font-size:.78rem;color:rgba(255,255,255,.4)}
+.footer-links a{display:block;font-size:.82rem;color:rgba(255,255,255,.5);margin-bottom:.5rem;transition:color .2s}
+.footer-links a:hover{color:var(--white)}
+.footer-social a{display:inline-block;font-size:.82rem;color:rgba(255,255,255,.5);margin-right:1rem;transition:color .2s}
+.footer-social a:hover{color:var(--white)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.08);padding-top:1.25rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem}
+.footer-license{font-size:.72rem;color:rgba(255,255,255,.3)}
+.footer-copy{font-size:.72rem;color:rgba(255,255,255,.3)}
+
+/* FLOATING CALL */
+.floating-call{position:fixed;bottom:1.5rem;right:1.5rem;z-index:300;display:flex;align-items:center;gap:.5rem;background:var(--svm-blue);color:var(--white);padding:.65rem 1.2rem;border-radius:100px;text-decoration:none;font-weight:600;font-size:.82rem;box-shadow:0 6px 20px rgba(26,82,118,.3);transition:all .2s;animation:float-up .5s var(--ease) .8s backwards}
+.floating-call:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(26,82,118,.4)}
+.floating-call svg{width:18px;height:18px;flex-shrink:0}
+@keyframes float-up{from{opacity:0;transform:translateY(16px)}}
+
+/* RESPONSIVE */
+@media(max-width:1024px){
+.cap-grid{grid-template-columns:repeat(2,1fr)}
+.ind-grid{grid-template-columns:repeat(2,1fr)}
+.team-grid{grid-template-columns:repeat(3,1fr)}
+.footer-grid{grid-template-columns:1fr 1fr;gap:2rem}
+}
+@media(max-width:768px){
+.topbar{font-size:.72rem;padding:.4rem 0}
+.header-nav{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(255,255,255,.98);flex-direction:column;justify-content:center;align-items:center;gap:1.5rem;z-index:998;backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px)}
+.header-nav.open{display:flex}
+.header-nav a{font-size:1.1rem;opacity:.8}
+.header-actions{display:none}
+.mobile-toggle{display:block;z-index:999}
+.mobile-toggle.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.mobile-toggle.open span:nth-child(2){opacity:0}
+.mobile-toggle.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+.hero{min-height:70vh}
+.hero .container{padding-bottom:4rem;padding-top:4rem}
+.hero h1{font-size:clamp(2rem,7vw,3rem)}
+.hero-sub{font-size:.92rem;margin-bottom:1.5rem}
+.hero-actions{flex-direction:column;gap:.6rem;max-width:280px}
+.hero-actions .btn,.hero-actions .btn-ghost{width:100%;justify-content:center;text-align:center}
+.about-grid{grid-template-columns:1fr;gap:2rem}
+.about-image{order:-1;aspect-ratio:16/9}
+.cap-grid{grid-template-columns:1fr}
+.ind-grid{grid-template-columns:repeat(2,1fr)}
+.loc-grid{grid-template-columns:1fr}
+.team-grid{grid-template-columns:repeat(2,1fr)}
+.about,.capabilities,.industries,.locations,.team{padding:3.5rem 0}
+.footer-grid{grid-template-columns:1fr;gap:1.5rem;text-align:center}
+.footer-bottom{flex-direction:column;text-align:center}
+.floating-call .call-text{display:none}
+.header-logo img{height:32px}
+}
+@media(max-width:480px){
+.container{width:92%}
+.ind-grid{grid-template-columns:1fr}
+.team-grid{grid-template-columns:1fr}
+.hero{min-height:60vh}
+.hero h1{font-size:1.8rem}
+.cap-card-img{height:160px}
+.loc-card{padding:1.5rem}
+.team-avatar{width:140px;height:140px}
+}
+@media(max-width:375px){
+.hero h1{font-size:1.6rem}
+.hero-sub{font-size:.85rem}
+.topbar{font-size:.65rem}
+.header-logo-text{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- Top Bar -->
+<div class="topbar">
+<div class="container">
+  24-Hour HVAC &amp; Plumbing Service: <a href="tel:4089430380">408.943.0380</a> Dial 5
+</div>
+</div>
+
+<!-- Header -->
+<header class="header" id="header">
+<div class="container header-inner">
+  <a href="index.html" class="header-logo" aria-label="SVM Home">
+    <img src="images/svm-logo.png" alt="SVM - Silicon Valley Mechanical" width="40" height="40" fetchpriority="high">
+    <span class="header-logo-text">Silicon Valley<br>Mechanical</span>
+  </a>
+  <nav class="header-nav" id="headerNav">
+    <a href="#about">About</a>
+    <a href="#capabilities">Capabilities</a>
+    <a href="#team">Team</a>
+    <a href="#locations">Locations</a>
+    <a href="culture-careers.html">Culture &amp; Careers</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  <div class="header-actions">
+    <a href="tel:4089430380" class="btn btn-outline">408.943.0380</a>
+    <a href="contact.html" class="btn btn-primary">Request Quote</a>
+  </div>
+  <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</div>
+</header>
+
+<!-- Hero -->
+<section class="hero" id="hero">
+<div class="hero-bg"></div>
+<div class="container">
+  <div class="hero-content">
+    <h1 class="reveal">Building Beyond.</h1>
+    <p class="hero-sub reveal reveal-d1"><strong>Northern California's premier mechanical contractor.</strong> HVAC, plumbing, and 24/7 service for the facilities that power Silicon Valley.</p>
+    <div class="hero-actions reveal reveal-d2">
+      <a href="contact.html" class="btn btn-primary">Request a Quote</a>
+      <a href="tel:4089430380" class="btn-ghost">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        408.943.0380
+      </a>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- About -->
+<section class="about" id="about">
+<div class="container">
+  <div class="about-grid">
+    <div>
+      <div class="section-label reveal">About SVM</div>
+      <h2 class="reveal reveal-d1">Engineering excellence since 1994</h2>
+      <p class="reveal reveal-d2">Founded in San Jose, Silicon Valley Mechanical has grown from a local mechanical shop into one of Northern California's largest and most trusted HVAC and plumbing contractors.</p>
+      <p class="reveal reveal-d2">It is our mission to provide trusted service through a consistent and exceptional experience at every level. Our vision is to build environments that inspire innovation and creativity.</p>
+    </div>
+    <div class="about-image reveal reveal-d2">
+      <img src="images/facility-fabrication.jpg" alt="SVM fabrication facility in San Jose" loading="lazy">
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- Capabilities -->
+<section class="capabilities" id="capabilities">
+<div class="container">
+  <div class="capabilities-header">
+    <div class="section-label reveal">Capabilities</div>
+    <h2 class="reveal reveal-d1">What we do</h2>
+    <p class="reveal reveal-d2">At SVM we strive to ensure every project and each client we engage with is met with the utmost quality and integrity.</p>
+  </div>
+  <div class="cap-grid">
+    <a href="hvac-construction.html" class="cap-card reveal">
+      <img class="cap-card-img" src="images/fabrication-ductwork.jpg" alt="HVAC ductwork fabrication at SVM facility" loading="lazy">
+      <div class="cap-card-body">
+        <h3>HVAC Construction</h3>
+        <p>Full design-build mechanical systems. In-house engineering, fabrication, and installation.</p>
+        <span class="cap-card-arrow">Learn more &rarr;</span>
+      </div>
+    </a>
+    <a href="plumbing-piping.html" class="cap-card reveal reveal-d1">
+      <img class="cap-card-img" src="images/plumbing-copper-pipe.jpg" alt="Copper piping at SVM fabrication shop" loading="lazy">
+      <div class="cap-card-body">
+        <h3>Plumbing &amp; Piping</h3>
+        <p>New construction, tenant improvements, retrofits. Specialized in microelectronics, medical, and biotech labs.</p>
+        <span class="cap-card-arrow">Learn more &rarr;</span>
+      </div>
+    </a>
+    <a href="service-maintenance.html" class="cap-card reveal reveal-d2">
+      <img class="cap-card-img" src="images/about-trane-chiller.jpg" alt="SVM technician servicing TRANE chiller" loading="lazy">
+      <div class="cap-card-body">
+        <h3>Service &amp; Maintenance</h3>
+        <p>24/7 emergency response. Preventive maintenance, diagnostics, and rapid repair across all equipment types.</p>
+        <span class="cap-card-arrow">Learn more &rarr;</span>
+      </div>
+    </a>
+  </div>
+</div>
+</section>
+
+<!-- Team -->
+<section class="team" id="team">
+<div class="container">
+  <div class="team-header">
+    <div class="section-label reveal">Leadership</div>
+    <h2 class="reveal reveal-d1">Meet the team</h2>
+    <p class="reveal reveal-d2">Decades of mechanical contracting expertise leading every project.</p>
+  </div>
+  <div class="team-grid">
+    <div class="team-card reveal">
+      <div class="team-avatar"><img src="images/team-jeremy-day.jpg" alt="Jeremy Day" loading="lazy"></div>
+      <h3>Jeremy Day</h3>
+      <span>VP Operations</span>
+    </div>
+    <div class="team-card reveal reveal-d1">
+      <div class="team-avatar"><img src="images/team-stacy-her.jpg" alt="Stacy Her" loading="lazy"></div>
+      <h3>Stacy Her</h3>
+      <span>Chief Financial Officer</span>
+    </div>
+    <div class="team-card reveal reveal-d2">
+      <div class="team-avatar"><img src="images/team-hannah-monteiro.jpg" alt="Hannah Monteiro" loading="lazy"></div>
+      <h3>Hannah Monteiro</h3>
+      <span>Chief Administrative Officer</span>
+    </div>
+    <div class="team-card reveal reveal-d3">
+      <div class="team-avatar"><img src="images/team-michael-orourke.jpg" alt="Michael O'Rourke" loading="lazy"></div>
+      <h3>Michael O'Rourke</h3>
+      <span>Director, Service</span>
+    </div>
+    <div class="team-card reveal">
+      <div class="team-avatar"><img src="images/team-byron-rifenburg.jpg" alt="Byron Rifenburg" loading="lazy"></div>
+      <h3>Byron Rifenburg, PE</h3>
+      <span>Director, Quick Response</span>
+    </div>
+    <div class="team-card reveal reveal-d1">
+      <div class="team-avatar"><img src="images/team-donavon-winters.jpg" alt="Donavon Winters" loading="lazy"></div>
+      <h3>Donavon Winters</h3>
+      <span>Director, Safety</span>
+    </div>
+    <div class="team-card reveal reveal-d2">
+      <div class="team-avatar"><img src="images/team-don-deguzman.jpg" alt="Don DeGuzman" loading="lazy"></div>
+      <h3>Don DeGuzman</h3>
+      <span>BIM Manager</span>
+    </div>
+    <div class="team-card reveal reveal-d3">
+      <div class="team-avatar"><img src="images/team-bryson-borzini.jpg" alt="Bryson Borzini" loading="lazy"></div>
+      <h3>Bryson Borzini, PE</h3>
+      <span>Project Executive</span>
+    </div>
+    <div class="team-card reveal">
+      <div class="team-avatar"><img src="images/team-david-heckle.jpg" alt="David Heckle" loading="lazy"></div>
+      <h3>David Heckle, PE</h3>
+      <span>Project Executive</span>
+    </div>
+    <div class="team-card reveal reveal-d1">
+      <div class="team-avatar"><img src="images/team-sean-mchugh.jpg" alt="Sean McHugh" loading="lazy"></div>
+      <h3>Sean McHugh, PE</h3>
+      <span>Project Executive</span>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- Locations -->
+<section class="locations" id="locations">
+<div class="container">
+  <div class="locations-header">
+    <div class="section-label reveal">Locations</div>
+    <h2 class="reveal reveal-d1">Our offices</h2>
+    <p class="reveal reveal-d2">Serving Northern California and Nevada.</p>
+  </div>
+  <div class="loc-grid">
+    <a href="https://www.google.com/maps/place/SVM/@37.3961356,-121.8993989,18.01z/data=!4m6!3m5!1s0x808fcc01ded0f507:0x83fc53adc89ceb8!8m2!3d37.3956166!4d-121.8985025!16s%2Fg%2F12xr00w99?entry=ttu" target="_blank" rel="noopener" class="loc-card reveal">
+      <h3>San Jose</h3>
+      <div class="loc-region">Bay Area / Headquarters</div>
+      <address>2115 Ringwood Ave<br>San Jose, CA 95131</address>
+      <span class="loc-map-link">View on map</span>
+    </a>
+    <a href="https://www.google.com/maps/place/SVM+Sacramento/@38.6456376,-121.4964082,15z/data=!3m1!4b1!4m6!3m5!1s0x809ad74c56133fbf:0xad6e80308f1a1843!8m2!3d38.6456213!4d-121.4861299!16s%2Fg%2F11xtnfj39n?entry=ttu" target="_blank" rel="noopener" class="loc-card reveal reveal-d1">
+      <h3>Sacramento</h3>
+      <div class="loc-region">Central Valley</div>
+      <address>1166 National Dr #10<br>Sacramento, CA 95834</address>
+      <span class="loc-map-link">View on map</span>
+    </a>
+    <a href="https://www.google.com/maps/place/SVM+NV/@39.5361951,-119.5014293,15z/data=!3m1!4b1!4m6!3m5!1s0x80991fe093538095:0xd8fe4c83f39aecad!8m2!3d39.536179!4d-119.491151!16s%2Fg%2F11xdsmln_k?entry=ttu" target="_blank" rel="noopener" class="loc-card reveal reveal-d2">
+      <h3>Reno</h3>
+      <div class="loc-region">Nevada</div>
+      <address>1859 Peru Dr<br>Sparks, NV 89434</address>
+      <span class="loc-map-link">View on map</span>
+    </a>
+  </div>
+</div>
+</section>
+
+<!-- Footer -->
+<footer class="footer" id="contact-footer">
+<div class="container">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <span style="font-family:var(--heading);font-size:1.6rem;font-weight:800;letter-spacing:.04em;color:var(--white);display:block;margin-bottom:.25rem">SVM</span>
+      <p>Premier HVAC and plumbing contractor serving Northern California and Nevada since 1994.</p>
+      <div class="phone"><a href="tel:4089430380" style="color:white;text-decoration:none">408.943.0380</a></div>
+      <div class="phone-sub">24-Hour HVAC Service: Dial 5</div>
+    </div>
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <a href="index.html">Home</a>
+      <a href="#team">Team</a>
+      <a href="#capabilities">Capabilities</a>
+      <a href="culture-careers.html">Culture &amp; Careers</a>
+      <a href="#contact-footer">Contact</a>
+    </div>
+    <div class="footer-links">
+      <h4>Capabilities</h4>
+      <a href="hvac-construction.html">HVAC Construction</a>
+      <a href="plumbing-piping.html">Plumbing &amp; Piping</a>
+      <a href="service-maintenance.html">Service &amp; Maintenance</a>
+    </div>
+    <div class="footer-links">
+      <h4>Socials</h4>
+      <a href="https://www.facebook.com/svminc" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://www.linkedin.com/company/silicon-valley-mechanical" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-license">CA License #992731 | NV License #0092538 &amp; #0092508</div>
+    <div class="footer-copy">&copy; 2026 Silicon Valley Mechanical, Inc. All rights reserved.</div>
+  </div>
+</div>
+</footer>
+
+<!-- Floating Call -->
+<a href="tel:4089430380" class="floating-call" aria-label="Call 24/7">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+<span class="call-text">24/7 Service</span>
+</a>
+
+<script>
+const toggle=document.getElementById('mobileToggle'),nav=document.getElementById('headerNav');
+toggle.addEventListener('click',()=>{toggle.classList.toggle('open');nav.classList.toggle('open')});
+nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{toggle.classList.remove('open');nav.classList.remove('open')}));
+
+const header=document.querySelector('.header');
+window.addEventListener('scroll',()=>header.classList.toggle('scrolled',window.scrollY>60),{passive:true});
+
+const reveals=document.querySelectorAll('.reveal');
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}})},{threshold:0,rootMargin:'0px 0px 80px 0px'});
+reveals.forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
