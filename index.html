@@ -2,7 +2,10 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<link rel="icon" type="image/png" href="favicon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="icon" href="favicon.ico" sizes="48x48">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Silicon Valley Mechanical (SVM) | HVAC & Plumbing Contractor San Jose, CA</title>
 <meta name="description" content="Silicon Valley Mechanical (SVM) is the Bay Area's premier HVAC and plumbing contractor since 1994. 24/7 emergency service, design-build, data center cooling. San Jose, Sacramento, Reno. Call 408.943.0380.">
@@ -25,13 +28,21 @@
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "Silicon Valley Mechanical",
-  "alternateName": "SVM",
+  "alternateName": ["SVM", "SVM Mechanical", "SVM HVAC", "Silicon Valley Mechanical Inc"],
   "url": "https://svmfriend.com",
-  "description": "Premier HVAC and plumbing contractor serving Northern California and Nevada since 1994.",
+  "logo": "https://svmfriend.com/images/svm-logo.png",
+  "image": "https://svmfriend.com/images/hero-tech-rooftop.jpg",
+  "description": "Silicon Valley Mechanical (SVM) is the Bay Area's premier HVAC and plumbing contractor. 24/7 emergency service, design-build construction, data center cooling. Serving San Jose, Sacramento, and Reno since 1994.",
   "foundingDate": "1994",
   "slogan": "Building Beyond.",
   "telephone": "+1-408-943-0380",
   "email": "careers@svminc.com",
+  "numberOfEmployees": {"@type": "QuantitativeValue", "value": "130+"},
+  "areaServed": [
+    {"@type": "State", "name": "California"},
+    {"@type": "State", "name": "Nevada"}
+  ],
+  "knowsAbout": ["HVAC", "Plumbing", "Mechanical Contracting", "Data Center Cooling", "FARS", "BIM Modeling", "VRF Systems", "Chiller Service", "Boiler Service"],
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "2115 Ringwood Ave",
@@ -39,6 +50,60 @@
     "addressRegion": "CA",
     "postalCode": "95131",
     "addressCountry": "US"
+  },
+  "sameAs": [
+    "https://www.facebook.com/svminc",
+    "https://www.linkedin.com/company/silicon-valley-mechanical",
+    "https://www.svminc.com"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Silicon Valley Mechanical",
+  "alternateName": ["SVM", "SVM Mechanical"],
+  "url": "https://svmfriend.com"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": "https://svmfriend.com/#localbusiness",
+  "name": "Silicon Valley Mechanical",
+  "alternateName": "SVM",
+  "image": "https://svmfriend.com/images/facility-fabrication.jpg",
+  "telephone": "+1-408-943-0380",
+  "priceRange": "$$$$",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "2115 Ringwood Ave",
+    "addressLocality": "San Jose",
+    "addressRegion": "CA",
+    "postalCode": "95131",
+    "addressCountry": "US"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 37.3956166,
+    "longitude": -121.8985025
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+    "opens": "07:00",
+    "closes": "16:00"
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "HVAC and Plumbing Services",
+    "itemListElement": [
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "HVAC Construction", "url": "https://svmfriend.com/hvac-construction.html"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Plumbing and Process Piping", "url": "https://svmfriend.com/plumbing-piping.html"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "24/7 HVAC Service and Maintenance", "url": "https://svmfriend.com/service-maintenance.html"}}
+    ]
   }
 }
 </script>
