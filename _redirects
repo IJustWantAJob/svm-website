@@ -1,0 +1,2 @@
+# Redirect www to root
+https://www.svmfriend.com/* https://svmfriend.com/:splat 301
