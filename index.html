@@ -127,13 +127,13 @@ img{max-width:100%;height:auto}
 .capabilities-header h2{font-size:clamp(1.8rem,3vw,2.4rem);margin-bottom:.75rem}
 .capabilities-header p{color:var(--muted);font-size:1.05rem;line-height:1.7;margin:0 auto}
 .cap-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
-.cap-card{display:block;padding:0;border:1px solid var(--gray-200);border-radius:8px;background:var(--bg);transition:all .25s var(--ease);overflow:hidden;text-decoration:none;color:inherit}
+.cap-card{display:flex;flex-direction:column;padding:0;border:1px solid var(--gray-200);border-radius:8px;background:var(--bg);transition:all .25s var(--ease);overflow:hidden;text-decoration:none;color:inherit}
 .cap-card:hover{border-color:var(--svm-blue);transform:translateY(-3px);box-shadow:0 8px 24px rgba(26,82,118,.08)}
 .cap-card-img{width:100%;height:200px;object-fit:cover;display:block}
-.cap-card-body{padding:1.5rem}
+.cap-card-body{padding:1.5rem;display:flex;flex-direction:column;flex:1}
 .cap-card h3{font-size:1rem;margin-bottom:.5rem}
-.cap-card p{font-size:.9rem;color:var(--muted);line-height:1.6}
-.cap-card-arrow{display:inline-flex;align-items:center;gap:.4rem;margin-top:1rem;font-size:.9rem;font-weight:700;color:var(--svm-blue);padding:.5rem 1rem;background:rgba(26,82,118,.06);border-radius:5px;transition:background .2s}
+.cap-card p{font-size:.9rem;color:var(--muted);line-height:1.6;flex:1}
+.cap-card-arrow{display:inline-flex;align-items:center;gap:.4rem;margin-top:1rem;font-size:.9rem;font-weight:700;color:var(--svm-blue);padding:.5rem 1rem;background:rgba(26,82,118,.06);border-radius:5px;transition:background .2s;align-self:flex-start}
 .cap-card:hover .cap-card-arrow{background:rgba(26,82,118,.12)}
 
 /* INDUSTRIES */
@@ -265,6 +265,7 @@ img{max-width:100%;height:auto}
   <nav class="header-nav" id="headerNav">
     <a href="#about">About</a>
     <a href="#capabilities">Capabilities</a>
+    <a href="projects.html">Projects</a>
     <a href="#team">Team</a>
     <a href="#locations">Locations</a>
     <a href="culture-careers.html">Culture &amp; Careers</a>
@@ -461,6 +462,7 @@ img{max-width:100%;height:auto}
       <a href="index.html">Home</a>
       <a href="#team">Team</a>
       <a href="#capabilities">Capabilities</a>
+    <a href="projects.html">Projects</a>
       <a href="culture-careers.html">Culture &amp; Careers</a>
       <a href="#contact-footer">Contact</a>
     </div>
